@@ -1,9 +1,16 @@
 name: My First Workflow
-on: main
+
+on:
+  push:
+    branches: [ "main" ]  # Esto corrige el error de "Unexpected value 'main'"
+  workflow_dispatch:      # Esto te permite ejecutarlo manualmente
+
 jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
       - name: Print Greetings
         run: echo "Hello World!"
+
       - name: Print Goodbye
+        run: echo "Goodbye World!" # Esto corrige el error de la línea 9
